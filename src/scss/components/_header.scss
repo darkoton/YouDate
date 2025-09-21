@@ -1,22 +1,31 @@
 .cl-header {
   font-weight: 600;
+  transition: all 0.3s ease 0s;
+  background: rgba(98, 56, 211, 0.75);
+  backdrop-filter: blur(5px);
+
+
+  &.cl-scroll {}
 
   &__logo {
     max-width: 163px;
 
-    @media (max-width: 576px) {
+    @media (max-width: 768px) {
       max-width: 100px;
     }
   }
 
   &__navbar {
-    padding: 15px 0;
+    @include fluid(padding-top, 15px, 6px, 320px, 1170px);
+    @include fluid(padding-bottom, 15px, 6px, 320px, 1170px);
+
   }
 
   &__nav {
     row-gap: 10px;
     column-gap: 20px;
   }
+
   &__have-account {
     font-weight: 600;
   }
@@ -49,6 +58,7 @@
       @media (any-hover: hover) {
         cursor: pointer;
         transition: all 0.3s ease 0s;
+
         &:hover {
           color: #fff;
         }

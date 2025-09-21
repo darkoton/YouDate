@@ -1,15 +1,17 @@
 function scrollHeader() {
-  const header = document.querySelector('.header');
+  const header = document.querySelector('.cl-header');
+  const headerHeight = header.offsetHeight;
 
-  const callback = function (entries, observer) {
-    if (entries[0].isIntersecting) {
-      header.classList.remove('_scroll');
+  function onScroll() {
+    if (window.scrollY > headerHeight / 2) {
+      header.classList.add('cl-scroll');
     } else {
-      header.classList.add('_scroll');
+      header.classList.remove('cl-scroll');
     }
-  };
+  }
 
-  const headerObserver = new IntersectionObserver(callback);
-  headerObserver.observe(header);
+  onScroll();
+
+  window.addEventListener('scroll', onScroll);
 }
-scrollHeader()
+scrollHeader();

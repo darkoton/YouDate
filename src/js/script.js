@@ -7,7 +7,7 @@
 
 /* @@include("./modules/dynamic_adap.js")  // DYNAMIC ADAPTIVE */ 
 
-/* @@include("./modules/scroll_header.js")  // SCROLL HEADER */ 
+@@include("./modules/scroll_header.js")  // SCROLL HEADER 
 
 /*@@include("./modules/swiper.js"); // SLIDER SWIPER */
 
