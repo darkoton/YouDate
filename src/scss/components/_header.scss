@@ -1,5 +1,5 @@
 .cl-header {
-  background: #5a2fd0;
+  font-weight: 600;
 
   &__logo {
     max-width: 163px;
@@ -17,38 +17,41 @@
     row-gap: 10px;
     column-gap: 20px;
   }
-}
-
-.cl-language {
-  height: 38px;
-  padding: 0 10px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  border: 1px solid #fff;
-  border-radius: 1000px;
-
-  &__controls {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 4px;
-    padding: 2px 3px;
-    background: $colorPurple;
+  &__have-account {
+    font-weight: 600;
   }
 
-  &__controls button {
-    color: #9e7cf5;
-    background: transparent;
-    width: 9px;
-    height: 5px;
+  &__language {
+    height: 38px;
+    padding: 0 10px;
     display: flex;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid #fff;
+    border-radius: 1000px;
 
-    @media (any-hover: hover) {
-      cursor: pointer;
-      transition: all 0.3s ease 0s;
-      &:hover {
-        color: #fff;
+    &-controls {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 4px;
+      padding: 2px 3px;
+      background: $colorPurple;
+    }
+
+    &-controls button {
+      color: #9e7cf5;
+      background: transparent;
+      width: 9px;
+      height: 5px;
+      display: flex;
+
+      @media (any-hover: hover) {
+        cursor: pointer;
+        transition: all 0.3s ease 0s;
+        &:hover {
+          color: #fff;
+        }
       }
     }
   }
