@@ -5,7 +5,7 @@
 // @import './modules/_tailwind';
 
 //< " CONNECTING THE FILE WITH FONTS " >=====================================================================================================>//
-// @import "./modules/_fonts";
+@import './modules/_fonts';
 
 //< " CONNECTING THE FILE WITH ICONS " >=====================================================================================================>//
 // @import "./modules/_iconfonts";
@@ -19,9 +19,9 @@
 //< " body SITE " >=============================================================================================================>//
 body {
   background-color: $colorBg;
-  font-family: $fontFamily;
+  font-family: $fontSourceSans;
   color: $colorDark;
-  font-size: 14px;
+  font-size: 16px;
 
   // ._lock-scroll
   &._lock-scroll {
@@ -35,7 +35,6 @@ body {
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  background: url(../img/main-bg-ref.jpg);
 }
 
 //< " GRID " >=============================================================================================================>//
@@ -43,13 +42,6 @@ body {
 // .content
 .content {
   flex: 1 1 auto;
-}
-
-// ._container
-._container {
-  padding: 0px #{calc($containerPadding / 2) + px};
-  margin: 0px auto;
-  max-width: $maxWidthContainer + px;
 }
 
 //< " FILES COMPONENTS " >=============================================================================================================>//

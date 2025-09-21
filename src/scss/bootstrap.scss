@@ -1,0 +1,22 @@
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1205px;
+  }
+}
+
+.px-20 {
+  padding: 0 20px;
+}
+
+.btn-outline-primary {
+  border-radius: 1000px;
+  color: #fff;
+  border-color: #fff;
+  padding: 0.55rem 1.25rem;
+}
+
+.btn-outline-primary:hover {
+  background: #fff;
+  color: #000;
+  border-color: #fff;
+}

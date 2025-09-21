@@ -1,1 +1,55 @@
-//< " ФАЙЛ СТИЛЕЙ ХЕДЕРА " >=============================================================================================================>//
+.cl-header {
+  background: #5a2fd0;
+
+  &__logo {
+    max-width: 163px;
+
+    @media (max-width: 576px) {
+      max-width: 100px;
+    }
+  }
+
+  &__navbar {
+    padding: 15px 0;
+  }
+
+  &__nav {
+    row-gap: 10px;
+    column-gap: 20px;
+  }
+}
+
+.cl-language {
+  height: 38px;
+  padding: 0 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid #fff;
+  border-radius: 1000px;
+
+  &__controls {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 4px;
+    padding: 2px 3px;
+    background: $colorPurple;
+  }
+
+  &__controls button {
+    color: #9e7cf5;
+    background: transparent;
+    width: 9px;
+    height: 5px;
+    display: flex;
+
+    @media (any-hover: hover) {
+      cursor: pointer;
+      transition: all 0.3s ease 0s;
+      &:hover {
+        color: #fff;
+      }
+    }
+  }
+}
