@@ -7,7 +7,7 @@ document.querySelectorAll('[data-tabs]').forEach(parent => {
 
     button.addEventListener('click', () => {
       buttons.forEach(btn => btn.classList.remove('active'));
-      button.classList.add('tab-active');
+      button.classList.add('active');
 
       results.forEach(block => {
         if (block.dataset.tab === tabName) {

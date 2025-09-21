@@ -8,6 +8,10 @@
   padding: 0 20px;
 }
 
+.btn {
+  font-size: 1em;
+}
+
 .btn-outline-light {
   border-radius: 1000px;
   color: #fff;
@@ -32,6 +36,13 @@
   border-color: #2f68d1;
 }
 
+.btn-primary:not(:disabled):not(.disabled).active {
+  color: #fff;
+  background-color: #f46d9a;
+  border-color: #f46d9a;
+  box-shadow: none !important;
+}
+
 .btn-secondary {
   color: #fff;
   background-color: #f46d9a;
@@ -42,6 +53,8 @@
   background-color: #d5527d;
   border-color: #d5527d;
 }
+
+
 
 .custom-select:focus,
 .form-control:focus {

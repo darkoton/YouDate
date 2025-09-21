@@ -1,34 +1,51 @@
 .cl-members {
   &__body {
-    padding-top: 162px;
-    padding-bottom: 98px;
+    @include fluid(padding-top, 163px, 180px, 320px, 1170px);
+    @include fluid(padding-bottom, 98px, 50px, 320px, 1170px);
   }
 
   &__title {
-    font-size: 40px;
     font-weight: 600;
+    line-height: 150%;
+    text-transform: capitalize;
     color: $colorDarkGray;
+
+    @include fluid(font-size, 40px, 25px, 320px, 1170px);
   }
 
   &__desc {
     font-weight: 400;
-    font-size: 20px;
     line-height: 155%;
     color: $colorDarkGray;
-    margin-bottom: 44px;
+
+    @include fluid(font-size, 20px, 16px, 320px, 1170px);
+    @include fluid(margin-bottom, 44px, 20px, 320px, 1170px);
   }
 
   &__nav {
-    gap: 24px;
-    margin-bottom: 50px;
+    @include fluid(gap, 24px, 12px, 320px, 1170px);
+    @include fluid(margin-bottom, 50px, 20px, 320px, 1170px);
 
     &-btn {
       max-width: 140px;
+      min-height: 38px;
     }
   }
 
   &__grid {
-    row-gap: 24px;
+    display: none;
+
+    @include fluid(row-gap, 24px, 12px, 320px, 1170px);
+    @include fluid(margin-bottom, 50px, 20px, 320px, 1170px);
+
+    &.active {
+      display: flex;
+    }
+  }
+
+  &__card-body {
+    @include fluid(padding-left, 12px, 6px, 320px, 1170px);
+    @include fluid(padding-right, 12px, 6px, 320px, 1170px);
   }
 
   &__card {
@@ -43,16 +60,22 @@
     }
 
     &-info {
-      padding: 18px 26px;
+      @include fluid(padding-top, 18px, 14px, 320px, 1170px);
+      @include fluid(padding-bottom, 18px, 14px, 320px, 1170px);
+      @include fluid(padding-left, 26px, 20px, 320px, 1170px);
+      @include fluid(padding-right, 26px, 20px, 320px, 1170px);
+
     }
 
     &-title {
       font-weight: 600;
-      font-size: 24px;
       line-height: 100%;
       color: $colorDarkGray;
       position: relative;
       transition: all 0.3s ease 0s;
+
+      @include fluid(font-size, 24px, 18px, 320px, 1170px);
+
 
       &::after {
         content: '';
@@ -67,25 +90,34 @@
     }
 
     &-age {
-      font-size: 22px;
       line-height: 109%;
+
+      @include fluid(font-size, 22px, 18px, 320px, 1170px);
     }
 
     &-star {
-      margin-left: 11px;
+      @include fluid(margin-left, 11px, 5px, 320px, 1170px);
     }
 
     &-country {
       font-weight: 400;
-      font-size: 17px;
       line-height: 141%;
       color: $colorDarkGray;
-      margin-top: 16px;
+      @include fluid(font-size, 17px, 14px, 320px, 1170px);
+      @include fluid(margin-top, 16px, 12px, 320px, 1170px);
+    }
+
+    &-dot {
+      background: $colorGreen;
+      border-radius: 50%;
+      width: 8px;
+      height: 8px;
     }
 
     @media (any-hover: hover) {
       cursor: pointer;
       transition: all 0.3s ease 0s;
+
       &:hover {
         & .cl-members__card-title {
           color: $colorBlue;
@@ -96,5 +128,10 @@
         }
       }
     }
+  }
+
+  &__btn-all {
+    min-height: 44px;
+    max-width: 275px;
   }
 }
