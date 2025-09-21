@@ -1,6 +1,4 @@
 .cl-choose {
-
-
     &__body {
         @include fluid(padding-top, 83px, 40px, 320px, 1170px);
         @include fluid(padding-bottom, 96px, 50px, 320px, 1170px);
@@ -60,6 +58,7 @@
         color: $colorDarkGray;
 
         @include fluid(font-size, 40px, 25px, 320px, 1170px);
+        @include fluid(margin-bottom, 24px, 16px, 320px, 1170px);
     }
 
     &__desc {

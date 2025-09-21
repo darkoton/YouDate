@@ -11,6 +11,7 @@
     color: $colorDarkGray;
 
     @include fluid(font-size, 40px, 25px, 320px, 1170px);
+    @include fluid(margin-bottom, 24px, 16px, 320px, 1170px);
   }
 
   &__desc {
