@@ -1,0 +1,100 @@
+.cl-members {
+  &__body {
+    padding-top: 162px;
+    padding-bottom: 98px;
+  }
+
+  &__title {
+    font-size: 40px;
+    font-weight: 600;
+    color: $colorDarkGray;
+  }
+
+  &__desc {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 155%;
+    color: $colorDarkGray;
+    margin-bottom: 44px;
+  }
+
+  &__nav {
+    gap: 24px;
+    margin-bottom: 50px;
+
+    &-btn {
+      max-width: 140px;
+    }
+  }
+
+  &__grid {
+    row-gap: 24px;
+  }
+
+  &__card {
+    border-radius: 10px;
+    padding: 0;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0 6px 16px 0 rgba(0, 0, 0, 0.15);
+
+    img {
+      width: 100%;
+    }
+
+    &-info {
+      padding: 18px 26px;
+    }
+
+    &-title {
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 100%;
+      color: $colorDarkGray;
+      position: relative;
+      transition: all 0.3s ease 0s;
+
+      &::after {
+        content: '';
+        height: 1px;
+        width: 0;
+        background-color: $colorBlue;
+        position: absolute;
+        bottom: 2px;
+        left: 0;
+        transition: all 0.3s ease 0s;
+      }
+    }
+
+    &-age {
+      font-size: 22px;
+      line-height: 109%;
+    }
+
+    &-star {
+      margin-left: 11px;
+    }
+
+    &-country {
+      font-weight: 400;
+      font-size: 17px;
+      line-height: 141%;
+      color: $colorDarkGray;
+      margin-top: 16px;
+    }
+
+    @media (any-hover: hover) {
+      cursor: pointer;
+      transition: all 0.3s ease 0s;
+      &:hover {
+        & .cl-members__card-title {
+          color: $colorBlue;
+
+          &::after {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}

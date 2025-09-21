@@ -1,26 +1,21 @@
-let tabs = () => {
-  let nav = document.querySelectorAll('.main__tab'),
-    result = document.querySelectorAll('.main__tab-result'),
-    tabName
+document.querySelectorAll('[data-tabs]').forEach(parent => {
+  const buttons = parent.querySelectorAll('[data-tab-btn]');
+  const results = parent.querySelectorAll('[data-tab]');
 
-  nav.forEach(item => {
-    item.addEventListener('click', selectnav)
-  })
+  buttons.forEach(button => {
+    const tabName = button.dataset.tabBtn;
 
-  function selectnav() {
-    nav.forEach(item => {
-      item.classList.remove('_active');
+    button.addEventListener('click', () => {
+      buttons.forEach(btn => btn.classList.remove('active'));
+      button.classList.add('tab-active');
+
+      results.forEach(block => {
+        if (block.dataset.tab === tabName) {
+          block.classList.add('active');
+        } else {
+          block.classList.remove('active');
+        }
+      });
     });
-    this.classList.add('_active')
-    tabName = this.getAttribute('data-tab-name')
-    selectresult(tabName)
-  }
-
-  function selectresult(tabName) {
-    result.forEach(item => {
-      item.classList.contains(tabName) ? item.classList.add('_active') : item.classList.remove('_active')
-    })
-  }
-}
-
-tabs()
+  });
+});

@@ -13,7 +13,7 @@
 
 /* @@include "./modules/animate_scroll.js" // ANIMATE WITH SCROLL */  
 
-/*@@include("./modules/tabs.js"); // TABS */
+@@include("./modules/tabs.js"); // TABS
 
 /*@@include("./modules/spoiler.js"); // TABS */
 
