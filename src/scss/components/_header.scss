@@ -1,11 +1,12 @@
 .cl-header {
   font-weight: 600;
   transition: all 0.3s ease 0s;
-  background: rgba(98, 56, 211, 0.75);
-  backdrop-filter: blur(5px);
 
 
-  &.cl-scroll {}
+  &.cl-scroll {
+    background: rgba(98, 56, 211, 0.75);
+    backdrop-filter: blur(5px);
+  }
 
   &__logo {
     max-width: 163px;
