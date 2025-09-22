@@ -1,0 +1,37 @@
+.cl-bonus {
+  &__body {
+    @include fluid(padding-top, 83px, 40px, 320px, 1170px);
+    @include fluid(padding-bottom, 96px, 50px, 320px, 1170px);
+  }
+
+  &__title {
+    font-weight: 600;
+    line-height: 150%;
+    text-transform: capitalize;
+    color: $colorDarkGray;
+
+    @include fluid(font-size, 40px, 25px, 320px, 1170px);
+    @include fluid(margin-bottom, 24px, 16px, 320px, 1170px);
+  }
+
+  &__desc {
+    font-weight: 400;
+    line-height: 155%;
+    color: $colorDarkGray;
+
+    @include fluid(font-size, 20px, 16px, 320px, 1170px);
+    @include fluid(margin-bottom, 44px, 20px, 320px, 1170px);
+  }
+
+  &__counter {
+    display: flex;
+    justify-content: center;
+
+    @include fluid(margin-bottom, 70px, 30px, 320px, 1170px);
+  }
+
+  &__btn {
+    min-height: 44px;
+    max-width: 275px;
+  }
+}

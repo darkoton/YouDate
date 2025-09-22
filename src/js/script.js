@@ -24,3 +24,26 @@
 isAvif();
 isWebp();
 isDevice();
+
+    function handleTickInit(tick) {
+        var interval = 500;
+        // simulate value updates for demo purposes
+        Tick.helper.interval(function(){
+            //tick.value += 7 + Math.ceil(Math.random() * 3);
+            tick.value ++;
+        }, interval);
+
+        // request data from a php file every five seconds
+        /*
+        Tick.data.poll(
+            'data.php',
+            function(response) {
+                // assuming the response is a plain number
+                // we turn it into an int and feed it directly to tick
+                tick.value = parseInt(response, 10);
+            },
+            5000
+        );
+        */
+
+    }

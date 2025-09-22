@@ -1,1 +1,118 @@
-//< " ФАЙЛ СТИЛЕЙ ФУТЕРА " >=============================================================================================================>//
+.cl-footer {
+  background-color: #d5527d;
+  color: $colorWhite;
+
+  &__body {
+    row-gap: 20px;
+    @include fluid(padding-top, 98px, 40px, 320px, 1170px);
+    @include fluid(padding-bottom, 115px, 40px, 320px, 1170px);
+  }
+  &__logo {
+    max-width: 163px;
+
+    @include fluid(margin-bottom, 42px, 20px, 320px, 1170px);
+  }
+  &__text {
+    font-weight: 600;
+    line-height: 125%;
+    color: #fff;
+
+    @include fluid(font-size, 16px, 12px, 320px, 1170px);
+  }
+  &__text:not(:last-child) {
+    margin-bottom: 12px;
+  }
+  &__title {
+    font-weight: 600;
+    line-height: 100%;
+    color: #fff;
+
+    @include fluid(font-size, 24px, 20px, 320px, 1170px);
+    @include fluid(margin-bottom, 34px, 15px, 320px, 1170px);
+  }
+  &__members {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+
+    &-item {
+      display: flex;
+      align-items: center;
+
+      @include fluid(gap, 13px, 6px, 320px, 1170px);
+    }
+
+    &-avatar {
+      position: relative;
+      // border-radius: 50%;
+
+      &::after {
+        content: '';
+        position: absolute;
+        right: 0;
+        bottom: 9px;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background-color: $colorGreen;
+      }
+
+      img {
+        width: 100%;
+        @include fluid(max-width, 50px, 40px, 320px, 1170px);
+      }
+    }
+
+    &-avatar-offline {
+      &::after {
+        content: none;
+      }
+    }
+
+    &-name {
+      font-weight: 600;
+      line-height: 133%;
+      color: #fff;
+
+      @include fluid(font-size, 18px, 14px, 320px, 1920px);
+    }
+
+    &-status {
+      font-weight: 600;
+      line-height: 150%;
+      color: #fff;
+
+      @include fluid(font-size, 16px, 12px, 320px, 1920px);
+    }
+
+    &-place {
+      font-weight: 600;
+      line-height: 150%;
+      color: #fff;
+      @include fluid(font-size, 16px, 12px, 320px, 1920px);
+    }
+    &-date {
+      font-weight: 600;
+      line-height: 171%;
+      color: #fff;
+      @include fluid(font-size, 14px, 10px, 320px, 1920px);
+    }
+  }
+
+  &__contacts {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  &__contact {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+    line-height: 133%;
+    color: #fff;
+
+    @include fluid(font-size, 18px, 14px, 320px, 1920px);
+  }
+}

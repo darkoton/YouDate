@@ -1,11 +1,11 @@
 .cl-header {
   font-weight: 600;
   transition: all 0.3s ease 0s;
-
+  backdrop-filter: blur(5px);
+  background: rgba(98, 56, 211, 0.05);
 
   &.cl-scroll {
     background: rgba(98, 56, 211, 0.75);
-    backdrop-filter: blur(5px);
   }
 
   &__logo {
@@ -19,7 +19,6 @@
   &__navbar {
     @include fluid(padding-top, 15px, 6px, 320px, 1170px);
     @include fluid(padding-bottom, 15px, 6px, 320px, 1170px);
-
   }
 
   &__nav {
