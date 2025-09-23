@@ -5,7 +5,7 @@
   background: rgba(98, 56, 211, 0.05);
 
   &.cl-scroll {
-    background: rgba(98, 56, 211, 0.75);
+    background: rgba(98, 56, 211, 0.8);
   }
 
   &__logo {
@@ -17,8 +17,8 @@
   }
 
   &__navbar {
-    @include fluid(padding-top, 15px, 6px, 320px, 1170px);
-    @include fluid(padding-bottom, 15px, 6px, 320px, 1170px);
+    @include fluid(padding-top, 10px, 5px, 320px, 1170px);
+    @include fluid(padding-bottom, 10px, 5 px, 320px, 1170px);
   }
 
   &__nav {
@@ -64,7 +64,7 @@
       justify-content: center;
       gap: 4px;
       padding: 2px 3px;
-      background: $colorPurple;
+      background: transparent;
       pointer-events: none;
       position: absolute;
       right: 25px;
