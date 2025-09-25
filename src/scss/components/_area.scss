@@ -1,58 +1,70 @@
 .cl-area {
-    &__body {
-        @include fluid(padding-top, 83px, 40px, 320px, 1170px);
-        @include fluid(padding-bottom, 97px, 50px, 320px, 1170px);
+  &__body {
+    @include fluid(padding-top, 83px, 40px, 320px, 1170px);
+    @include fluid(padding-bottom, 97px, 50px, 320px, 1170px);
+  }
+
+  &__top {
+    row-gap: 20px;
+    @include fluid(margin-bottom, 50px, 20px, 320px, 1170px);
+  }
+
+  &__title {
+    font-weight: 600;
+    line-height: 150%;
+    text-transform: capitalize;
+    color: $colorDarkGray;
+
+    @include fluid(font-size, 40px, 25px, 320px, 1170px);
+    @include fluid(margin-bottom, 24px, 16px, 320px, 1170px);
+  }
+
+  &__desc {
+    font-weight: 400;
+    line-height: 155%;
+    color: $colorDarkGray;
+
+    @include fluid(font-size, 20px, 16px, 320px, 1170px);
+    @include fluid(margin-bottom, 44px, 20px, 320px, 1170px);
+  }
+
+  &__button {
+    min-height: 44px;
+  }
+
+  &__grid {
+    row-gap: 12px;
+  }
+
+  &__card {
+    border-radius: 10px;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      transition: all 0.3s ease 0s;
     }
 
-    &__top {
-        row-gap: 20px;
-        @include fluid(margin-bottom, 50px, 20px, 320px, 1170px);
+    &-title {
+      left: 24px;
+      bottom: 17px;
+      font-weight: 600;
+      font-size: 24px;
+      color: #fff;
+
+      @include fluid(font-size, 24px, 18px, 320px, 1170px);
+      @include fluid(left, 24px, 18px, 320px, 1170px);
+      @include fluid(bottom, 17px, 10px, 320px, 1170px);
     }
 
-    &__title {
-        font-weight: 600;
-        line-height: 150%;
-        text-transform: capitalize;
-        color: $colorDarkGray;
-
-        @include fluid(font-size, 40px, 25px, 320px, 1170px);
-        @include fluid(margin-bottom, 24px, 16px, 320px, 1170px);
-    }
-
-    &__desc {
-        font-weight: 400;
-        line-height: 155%;
-        color: $colorDarkGray;
-
-        @include fluid(font-size, 20px, 16px, 320px, 1170px);
-        @include fluid(margin-bottom, 44px, 20px, 320px, 1170px);
-    }
-
-    &__button {
-        min-height: 44px;
-    }
-
-    &__grid {
-        row-gap: 12px
-    }
-
-    &__card {
-        border-radius: 0 0 10px 10px;
-
+    @media (any-hover: hover) {
+      cursor: pointer;
+      transition: all 0.3s ease 0s;
+      &:hover {
         img {
-            width: 100%;
+          transform: scale(1.2);
         }
-
-        &-title {
-            left: 24px;
-            bottom: 17px;
-            font-weight: 600;
-            font-size: 24px;
-            color: #fff;
-
-            @include fluid(font-size, 24px, 18px, 320px, 1170px);
-            @include fluid(left, 24px, 18px, 320px, 1170px);
-            @include fluid(bottom, 17px, 10px, 320px, 1170px);
-        }
+      }
     }
+  }
 }

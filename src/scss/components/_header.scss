@@ -18,7 +18,7 @@
 
   &__navbar {
     @include fluid(padding-top, 10px, 5px, 320px, 1170px);
-    @include fluid(padding-bottom, 10px, 5 px, 320px, 1170px);
+    @include fluid(padding-bottom, 10px, 5px, 320px, 1170px);
   }
 
   &__nav {

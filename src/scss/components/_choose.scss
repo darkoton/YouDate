@@ -1,106 +1,114 @@
 .cl-choose {
-    &__body {
-        @include fluid(padding-top, 83px, 40px, 320px, 1170px);
-        @include fluid(padding-bottom, 96px, 50px, 320px, 1170px);
+  &__body {
+    @include fluid(padding-top, 83px, 40px, 320px, 1170px);
+    @include fluid(padding-bottom, 96px, 50px, 320px, 1170px);
+  }
+
+  &__decor {
+    * {
+      position: absolute;
     }
 
-    &__decor {
-        * {
-            position: absolute;
-        }
-
-        &-1 {
-            border-radius: 100%;
-            background-color: #f5fdff;
-            filter: blur(50px);
-            width: 540px;
-            height: 512px;
-            top: 25%;
-            left: -35%;
-        }
-
-        &-2 {
-            border-radius: 100%;
-            background-color: rgba(255, 165, 38, 0.09);
-            filter: blur(50px);
-            width: 502px;
-            height: 476px;
-            top: -25%;
-            left: 30%;
-        }
-
-        &-3 {
-            border-radius: 100%;
-            background-color: rgba(228, 244, 223, 0.71);
-            filter: blur(50px);
-            width: 616px;
-            height: 464px;
-            bottom: 0%;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        &-4 {
-            border-radius: 100%;
-            background-color: rgba(244, 109, 154, 0.16);
-            filter: blur(50px);
-            width: 616px;
-            height: 464px;
-            top: -15%;
-            right: -40%;
-        }
+    &-1 {
+      border-radius: 100%;
+      background-color: #f5fdff;
+      filter: blur(50px);
+      width: 540px;
+      height: 512px;
+      top: 25%;
+      left: -35%;
     }
 
-    &__title {
-        font-weight: 600;
-        line-height: 150%;
-        text-transform: capitalize;
-        color: $colorDarkGray;
-
-        @include fluid(font-size, 40px, 25px, 320px, 1170px);
-        @include fluid(margin-bottom, 24px, 16px, 320px, 1170px);
+    &-2 {
+      border-radius: 100%;
+      background-color: rgba(255, 165, 38, 0.09);
+      filter: blur(50px);
+      width: 502px;
+      height: 476px;
+      top: -25%;
+      left: 30%;
     }
 
-    &__desc {
-        font-weight: 400;
-        line-height: 155%;
-        color: $colorDarkGray;
-
-        @include fluid(font-size, 20px, 16px, 320px, 1170px);
-        @include fluid(margin-bottom, 44px, 20px, 320px, 1170px);
+    &-3 {
+      border-radius: 100%;
+      background-color: rgba(228, 244, 223, 0.71);
+      filter: blur(50px);
+      width: 616px;
+      height: 464px;
+      bottom: 0%;
+      left: 50%;
+      transform: translateX(-50%);
     }
 
-    &__grid {
-        row-gap: 12px
+    &-4 {
+      border-radius: 100%;
+      background-color: rgba(244, 109, 154, 0.16);
+      filter: blur(50px);
+      width: 616px;
+      height: 464px;
+      top: -15%;
+      right: -40%;
+    }
+  }
+
+  &__title {
+    font-weight: 600;
+    line-height: 150%;
+    text-transform: capitalize;
+    color: $colorDarkGray;
+
+    @include fluid(font-size, 40px, 25px, 320px, 1170px);
+    @include fluid(margin-bottom, 24px, 16px, 320px, 1170px);
+  }
+
+  &__desc {
+    font-weight: 400;
+    line-height: 155%;
+    color: $colorDarkGray;
+
+    @include fluid(font-size, 20px, 16px, 320px, 1170px);
+    @include fluid(margin-bottom, 44px, 20px, 320px, 1170px);
+  }
+
+  &__grid {
+    row-gap: 12px;
+  }
+
+  &__card {
+    background-color: $colorWhite;
+    @include fluid(padding-top, 60px, 20px, 320px, 1170px);
+    @include fluid(padding-bottom, 65px, 20px, 320px, 1170px);
+    @include fluid(padding-right, 27px, 15px, 320px, 1170px);
+    @include fluid(padding-left, 27px, 15px, 320px, 1170px);
+
+    @media (any-hover: hover) {
+      cursor: pointer;
+      transition: all 0.3s ease 0s;
+      &:hover {
+        box-shadow: 0 6px 16px 0 rgba(0, 0, 0, 0.15);
+      }
     }
 
-    &__card {
-        @include fluid(padding-top, 60px, 20px, 320px, 1170px);
-        @include fluid(padding-bottom, 65px, 20px, 320px, 1170px);
-        @include fluid(padding-right, 27px, 15px, 320px, 1170px);
-        @include fluid(padding-left, 27px, 15px, 320px, 1170px);
-
-
-        &-img {
-            width: 100%;
-            max-width: 78px;
-            margin-bottom: 25px;
-        }
-
-        &-title {
-            margin-bottom: 30px;
-            font-weight: 600;
-            font-size: 24px;
-            line-height: 100%;
-            color: $colorDarkGray;
-        }
-
-        &-desc {
-            font-weight: 400;
-            font-size: 17px;
-            line-height: 141%;
-            color: $colorDarkGray;
-            max-width: 230px;
-        }
+    &-img {
+      width: 100%;
+      max-width: 78px;
+      margin-bottom: 25px;
     }
+
+    &-title {
+      margin-bottom: 30px;
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 100%;
+      color: $colorDarkGray;
+    }
+
+    &-desc {
+      font-weight: 400;
+      font-size: 17px;
+      line-height: 141%;
+      color: $colorDarkGray;
+      max-width: 230px;
+    }
+  }
 }

@@ -3,15 +3,15 @@
 
 @@include("./modules/device.js"); //DEFINE DEVICE
 
-/* @@include("./modules/preloader.js"); // PRELOADER */ 
+/* @@include("./modules/preloader.js"); // PRELOADER */
 
-/* @@include("./modules/dynamic_adap.js")  // DYNAMIC ADAPTIVE */ 
+/* @@include("./modules/dynamic_adap.js")  // DYNAMIC ADAPTIVE */
 
 @@include("./modules/scroll_header.js")  // SCROLL HEADER 
 
 /*@@include("./modules/swiper.js"); // SLIDER SWIPER */
 
-/* @@include "./modules/animate_scroll.js" // ANIMATE WITH SCROLL */  
+/* @@include "./modules/animate_scroll.js" // ANIMATE WITH SCROLL */
 
 @@include("./modules/tabs.js"); // TABS
 
@@ -25,25 +25,24 @@ isAvif();
 isWebp();
 isDevice();
 
-    function handleTickInit(tick) {
-        var interval = 500;
-        // simulate value updates for demo purposes
-        Tick.helper.interval(function(){
-            //tick.value += 7 + Math.ceil(Math.random() * 3);
-            tick.value ++;
-        }, interval);
+function handleTickInit(tick) {
+  tick.value = 0; // изначально показываем 0
 
-        // request data from a php file every five seconds
-        /*
-        Tick.data.poll(
-            'data.php',
-            function(response) {
-                // assuming the response is a plain number
-                // we turn it into an int and feed it directly to tick
-                tick.value = parseInt(response, 10);
-            },
-            5000
-        );
-        */
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        // когда элемент попал в экран — запускаем анимацию
+        tick.value = 12345678;
 
-    }
+        // чтобы срабатывало только один раз
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.5 // 0.5 = половина элемента в зоне видимости
+  });
+
+  observer.observe(document.getElementById('counter'));
+}
+
+@@include("./components/hero.js"); // HERO

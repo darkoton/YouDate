@@ -1,77 +1,290 @@
-  .cl-hero {
-    background: linear-gradient(180deg, #5a2fd0 0%, #784dba 100%);
+.cl-hero {
+  background: linear-gradient(180deg, #5a2fd0 0%, #784dba 100%);
 
-    &__body {
-      padding-top: 140px;
-      @include fluid(padding-top, 140px, 80px, 320px, 1170px);
+  &__body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 140px;
+    @include fluid(padding-top, 140px, 80px, 320px, 1170px);
+  }
+
+  &__title {
+    line-height: 100%;
+
+    @include fluid(font-size, 48px, 22px, 320px, 1170px);
+    @include fluid(margin-bottom, 53px, 32px, 320px, 1170px);
+
+    & .text-pink {
+      color: $colorPink;
     }
 
-    &__title {
-      line-height: 100%;
+    & .text-small {
+      @include fluid(font-size, 32px, 14px, 320px, 1170px);
+    }
+  }
 
-      @include fluid(font-size, 48px, 22px, 320px, 1170px);
-      @include fluid(margin-bottom, 53px, 32px, 320px, 1170px);
+  &__map {
+    max-width: 100%;
+    margin-bottom: 38px;
+    position: relative;
 
-      & .text-pink {
-        color: $colorPink;
-      }
+    img {
+      width: 100%;
+    }
+  }
 
-      & .text-small {
-        @include fluid(font-size, 32px, 14px, 320px, 1170px);
+  &__point {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+
+    &-imgs {
+      position: absolute;
+      bottom: 14px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      width: 50px;
+      height: 50px;
+
+      & .cl-card {
+        position: absolute;
+        z-index: 0;
+        transition: all 0.3s ease 0s;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        &:nth-child(1) {
+          z-index: 3;
+        }
+        &:nth-child(2) {
+          z-index: 2;
+          transform: translate(0%, -50%);
+        }
+        &:nth-child(3) {
+          z-index: 1;
+          transform: translate(50%, -50%);
+        }
+
+        img {
+          width: 50px;
+          border-radius: 50%;
+        }
       }
     }
 
-    &__img {
-      max-width: 100%;
-      margin-bottom: 38px;
+    &-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: $colorWhite;
+      position: relative;
+      z-index: 0;
+      cursor: pointer;
 
-      img {
+      &::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        display: block;
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+        filter: blur(1px);
+        background: rgba(255, 248, 248, 0.2);
+        z-index: -1;
+        pointer-events: none;
+        opacity: 0;
+        transition: all 0.3s ease 0s;
+      }
+    }
+
+    @media (any-hover: hover) {
+      cursor: pointer;
+      transition: all 0.3s ease 0s;
+      &:hover {
+        ::before {
+          opacity: 1;
+        }
+      }
+    }
+
+    &:nth-child(1) {
+      top: 35%;
+      left: 16%;
+    }
+    &:nth-child(2) {
+      top: 25%;
+      left: 51.5%;
+    }
+    &:nth-child(3) {
+      top: 39%;
+      right: 29%;
+    }
+    &:nth-child(4) {
+      top: 37%;
+      right: 13%;
+    }
+    &:nth-child(5) {
+      bottom: 23%;
+      right: 16%;
+    }
+    &:nth-child(6) {
+      bottom: 42%;
+      right: 47%;
+    }
+
+    &-window {
+      display: flex;
+      flex-direction: column;
+      padding: 8px;
+      border-radius: 10px;
+      gap: 3px;
+      background-color: $colorWhite;
+      position: absolute;
+      bottom: 14px;
+      left: 50%;
+      transform: translateX(-50%);
+      min-width: 154px;
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.3s ease 0s;
+      z-index: 10;
+
+      &.active {
+        opacity: 1;
+        pointer-events: all;
+      }
+
+      & img {
         width: 100%;
+        max-width: 50px;
+      }
+
+      &-top {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+      }
+      &-info {
+        display: flex;
+        flex-direction: column;
+      }
+      &-name {
+        font-weight: 600;
+        font-size: 12px;
+        color: #4e5e72;
+      }
+      &-country {
+        font-weight: 400;
+        font-size: 10px;
+        color: #4e5e72;
+        white-space: nowrap;
+      }
+      &-nav {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-top: 4px;
+
+        &-btn {
+          background: transparent;
+          color: #d9d9d9;
+
+          @media (any-hover: hover) {
+            cursor: pointer;
+            transition: all 0.3s ease 0s;
+            &:hover {
+              color: $colorPink;
+            }
+          }
+        }
+      }
+      &-button {
+        font-family: var(--second-family);
+        font-weight: 600;
+        font-size: 12px;
+        color: #fff;
+        padding: 0;
+        height: 19px;
+      }
+    }
+  }
+
+  &__form {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 6px 16px 0 rgba(0, 0, 0, 0.15);
+    margin-bottom: -6%;
+
+    @include fluid(padding-top, 32px, 16px, 320px, 1170px);
+    @include fluid(padding-bottom, 32px, 16px, 320px, 1170px);
+    @include fluid(padding-left, 42px, 21px, 320px, 1170px);
+    @include fluid(padding-right, 42px, 21px, 320px, 1170px);
+    @include fluid(row-gap, 22.75px, 12px, 320px, 1170px);
+  }
+
+  &__label {
+    margin-bottom: 8px;
+    font-family: $fontHelvetica;
+    font-weight: 400;
+    line-height: 133%;
+    color: $colorGray;
+
+    @include fluid(font-size, 18px, 14px, 320px, 1170px);
+  }
+
+  &__gender-icon {
+    color: $colorDarkGray;
+    transition: all 0.3s ease 0s;
+  }
+
+  &__input {
+    padding: 10.5px 8px;
+    color: $colorGray;
+    border-radius: 4px;
+    min-height: 38px;
+    line-height: 14px;
+
+    @include fluid(font-size, 14px, 12px, 320px, 1170px);
+
+    &:focus {
+      color: $colorGray;
+    }
+    &:not(:hover) {
+      background: none;
+    }
+  }
+
+  &__btn {
+    min-height: 38px;
+  }
+
+  @media (max-width: 768px) {
+    &__point {
+      &-imgs {
+        width: 30px;
+        height: 30px;
+        .cl-card img {
+          width: 30px;
+        }
+      }
+      &-window {
+        img {
+          width: 40px;
+          height: 40px;
+        }
       }
     }
 
     &__form {
-      border-radius: 10px;
-      box-shadow: 0 6px 16px 0 rgba(0, 0, 0, 0.15);
-      margin-bottom: -6%;
-
-      @include fluid(padding-top, 32px, 16px, 320px, 1170px);
-      @include fluid(padding-bottom, 32px, 16px, 320px, 1170px);
-      @include fluid(padding-left, 42px, 21px, 320px, 1170px);
-      @include fluid(padding-right, 42px, 21px, 320px, 1170px);
-      @include fluid(row-gap, 22.75px, 12px, 320px, 1170px);
-    }
-
-    &__label {
-      margin-bottom: 8px;
-      font-family: $fontHelvetica;
-      font-weight: 400;
-      line-height: 133%;
-      color: $colorGray;
-
-      @include fluid(font-size, 18px, 14px, 320px, 1170px);
-    }
-
-    &__input {
-      padding: 10.5px 8px;
-      color: $colorGray;
-      border-radius: 4px;
-      min-height: 38px;
-
-      @include fluid(font-size, 14px, 12px, 320px, 1170px);
-
-      &:focus {
-        color: $colorGray;
-      }
-    }
-
-    &__btn {
-      min-height: 38px;
-    }
-
-    @media (max-width: 768px) {
-      &__form {
-        margin-bottom: -30%;
-      }
+      margin-bottom: -30%;
     }
   }
+}

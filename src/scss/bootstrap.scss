@@ -54,8 +54,6 @@
   border-color: #d5527d;
 }
 
-
-
 .custom-select:focus,
 .form-control:focus {
   color: #495057;
@@ -93,4 +91,8 @@ input[type='number']::-webkit-outer-spin-button {
 
 .gap-5 {
   gap: 3rem;
+}
+
+.popover.no-arrow .arrow {
+  display: none !important;
 }
