@@ -17,6 +17,7 @@
   }
 
   &__navbar {
+    padding: 0;
     @include fluid(padding-top, 10px, 5px, 320px, 1170px);
     @include fluid(padding-bottom, 10px, 5px, 320px, 1170px);
   }
@@ -24,6 +25,15 @@
   &__nav {
     row-gap: 10px;
     column-gap: 20px;
+
+    &-buttons {
+      row-gap: 10px;
+      column-gap: 20px;
+
+      @media (max-width: 576px) {
+        width: 100%;
+      }
+    }
   }
 
   &__have-account {
@@ -46,6 +56,7 @@
       border-radius: 1000px;
       font-size: 16px;
       width: 80px;
+      cursor: pointer;
 
       &:focus {
         background: transparent;
@@ -53,8 +64,10 @@
       }
 
       & option {
-        background-color: $colorPurple; /* фон у выпадающих пунктов */
-        color: #fff; /* цвет текста */
+        background-color: $colorPurple;
+        /* фон у выпадающих пунктов */
+        color: #fff;
+        /* цвет текста */
       }
     }
 

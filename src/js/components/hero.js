@@ -11,7 +11,6 @@ containers.forEach(container => {
   cards.forEach(card => {
     card.addEventListener('mouseenter', () => {
       if (!canSwitch) {
-        console.log('cant');
         return;
       }
       canSwitch = false;
@@ -39,14 +38,26 @@ containers.forEach(container => {
   });
 });
 
-const dots = document.querySelectorAll('.cl-hero__point-dot');
+const dots = document.querySelectorAll('.cl-hero__point-button');
 
 dots.forEach(dot => {
   dot.addEventListener('click', () => {
     const parent = dot.offsetParent;
-    const window = parent.querySelector('.cl-hero__point-window');
 
-    window.classList.add('active');
+    const win = parent.querySelector('.cl-hero__point-window');
+
+    const winCoords = win.getBoundingClientRect()
+    console.log(winCoords);
+
+    if (winCoords.right > window.innerWidth) {
+      const deltaX = Math.abs(window.innerWidth - winCoords.right)
+      win.style.transform = `translateX(-${100 - deltaX / winCoords.width * 100}%)`
+    } else if (winCoords.left < 0) {
+      const deltaX = Math.abs(window.innerWidth - winCoords.right)
+      win.style.transform = `translateX(-${100 - deltaX / winCoords.width * 100}%)`
+    }
+
+    win.classList.add('active');
   });
 });
 
