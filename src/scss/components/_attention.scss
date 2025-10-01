@@ -463,6 +463,25 @@
         }
       }
     }
+    &-volume {
+      &[data-status='on'] {
+        .volume {
+          display: block;
+        }
+        .not-volume {
+          display: none;
+        }
+      }
+
+      &[data-status='off'] {
+        .volume {
+          display: none;
+        }
+        .not-volume {
+          display: block;
+        }
+      }
+    }
     &-main {
       flex: 1 1 auto;
     }

@@ -56,3 +56,8 @@ new Swiper('.cl-attention__popup-slider', {
     prevEl: '.cl-attention__popup-prev',
   },
 });
+
+const volumButton = document.querySelector('.cl-attention__popup-volume')
+volumButton.addEventListener('click', ()=>{
+  volumButton.dataset.status = volumButton.dataset.status === 'on' ? 'off' : 'on'
+})
