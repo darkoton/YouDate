@@ -42,3 +42,17 @@ const swiper = new Swiper('#carouselAttention', {
     }
   }
 });
+
+new Swiper('.cl-attention__popup-slider', {
+  slidesPerView:1,
+  spaceBetween: 0,
+  effect: "fade",
+    pagination: {
+    el: '.cl-attention__popup-pag',
+  },
+  allowTouchMove: false,
+  navigation: {
+    nextEl: '.cl-attention__popup-next',
+    prevEl: '.cl-attention__popup-prev',
+  },
+});

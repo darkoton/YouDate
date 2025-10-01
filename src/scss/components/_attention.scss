@@ -68,6 +68,58 @@
         }
       }
     }
+
+    &.cl-attention__add-woman {
+      &::before {
+        background: linear-gradient(180deg, rgba(244, 109, 154, 0.3) 0%, #d5527d 100%);
+      }
+
+      & .cl-attention__add-button {
+        color: #ff8cb2;
+
+        @media (any-hover: hover) {
+          cursor: pointer;
+          transition: all 0.3s ease 0s;
+          &:hover {
+            color: #f46d9a;
+          }
+        }
+      }
+
+      @media (any-hover: hover) {
+        &:hover {
+          .cl-attention__add-button {
+            color: #f46d9a;
+          }
+        }
+      }
+    }
+
+    &.cl-attention__add-man {
+      &::before {
+        background: linear-gradient(180deg, rgba(44, 121, 227, 0.3) 0%, rgba(44, 121, 227, 1) 100%);
+      }
+
+      & .cl-attention__add-button {
+        color: #2c79e3;
+
+        @media (any-hover: hover) {
+          cursor: pointer;
+          transition: all 0.3s ease 0s;
+          &:hover {
+            color: #165bbd;
+          }
+        }
+      }
+
+      @media (any-hover: hover) {
+        &:hover {
+          .cl-attention__add-button {
+            color: #165bbd;
+          }
+        }
+      }
+    }
   }
 
   &__card {
@@ -94,6 +146,26 @@
       width: 100%;
       max-width: 100%;
       border-radius: 10px;
+    }
+
+    &-play {
+      width: 66px;
+      height: 66px;
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: rgba(217, 217, 217, 0.55);
+      color: #909093;
+
+      @media (any-hover: hover) {
+        cursor: pointer;
+        transition: all 0.3s ease 0s;
+        &:hover {
+          color: #f46d9a;
+        }
+      }
     }
 
     @media (any-hover: hover) {
@@ -221,6 +293,8 @@
   }
 
   &__popup {
+    user-select: none;
+
     &-body {
       max-width: 538px;
 
@@ -228,22 +302,24 @@
         max-width: 400px;
       }
     }
-    &-close {
-      top: 26px;
-      right: 26px;
-      color: #fff;
-      @media (any-hover: hover) {
-        cursor: pointer;
-        transition: all 0.3s ease 0s;
-        &:hover {
-          color: $colorPink;
-        }
-      }
+
+    & .swiper-slide {
+      pointer-events: none;
     }
+
+    &._active .swiper-slide {
+      pointer-events: auto;
+    }
+
+    &-slider {
+      width: 100%;
+    }
+
     &-card {
       position: relative;
       z-index: 0;
-
+      display: flex;
+      flex-direction: column;
       picture {
         width: 100%;
       }
@@ -269,7 +345,7 @@
     &-info {
       position: absolute;
       width: 100%;
-      height: 43%;
+      height: 100%;
       bottom: 0;
       left: 0;
       border-radius: 0 0 10px 10px;
@@ -278,6 +354,7 @@
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
+      z-index: 3;
 
       @include fluid(padding, 30px, 10px, 320px, 1170px);
 
@@ -324,6 +401,72 @@
         background-color: #fd9644;
       }
     }
+
+    &-pag {
+      display: flex;
+
+      @include fluid(margin-bottom, 15px, 8px, 320px, 1920px);
+
+      & .swiper-pagination-bullet {
+        width: 100%;
+        border: 1px solid #fff;
+        border-radius: 5px;
+        height: 5px;
+        transition: all 0.3s ease 0s;
+
+        &.swiper-pagination-bullet-active {
+          background: #fff;
+        }
+      }
+    }
+
+    &-nav {
+      position: absolute;
+      width: 50%;
+      height: 100%;
+      z-index: 1;
+    }
+
+    &-prev {
+      left: 0;
+      top: 0;
+    }
+
+    &-next {
+      right: 0;
+      top: 0;
+    }
+
+    &-actions {
+      display: flex;
+      align-items: center;
+      justify-content: end;
+      gap: 25px;
+      font-size: 24px;
+      position: relative;
+
+      @include fluid(gap, 25px, 15px, 320px, 1920px);
+    }
+    & .popup-close {
+      position: static;
+    }
+    &-button {
+      position: relative;
+      z-index: 2;
+      color: #fff;
+      background: transparent;
+      @media (any-hover: hover) {
+        cursor: pointer;
+        transition: all 0.3s ease 0s;
+        &:hover {
+          color: $colorPink;
+        }
+      }
+    }
+    &-main {
+      flex: 1 1 auto;
+    }
+
     &-desc {
       font-weight: 400;
       font-size: 14px;
@@ -355,6 +498,11 @@
         background-color: #ff8cb2;
         color: #fff;
       }
+    }
+
+    & button {
+      position: relative;
+      z-index: 2;
     }
   }
 }
