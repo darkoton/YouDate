@@ -405,7 +405,7 @@
     &-pag {
       display: flex;
 
-      @include fluid(margin-bottom, 15px, 8px, 320px, 1920px);
+      @include fluid(margin-bottom, 15px, 8px, 320px, 1170px);
 
       & .swiper-pagination-bullet {
         width: 100%;
@@ -445,7 +445,7 @@
       font-size: 24px;
       position: relative;
 
-      @include fluid(gap, 25px, 15px, 320px, 1920px);
+      @include fluid(gap, 25px, 15px, 320px, 1170px);
     }
     & .popup-close {
       position: static;

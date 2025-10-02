@@ -40,6 +40,19 @@
       align-items: center;
 
       @include fluid(gap, 13px, 6px, 320px, 1170px);
+
+      @media (any-hover: hover) {
+        &:hover {
+          & .cl-footer__members-name,
+          & .cl-footer__members-place {
+            color: $colorPurple;
+          }
+
+          & .cl-footer__members-img img {
+            transform: scale(1.1);
+          }
+        }
+      }
     }
 
     &-avatar {
@@ -69,12 +82,24 @@
       }
     }
 
+    &-img {
+      overflow: hidden;
+      border-radius: 4px;
+      img {
+        width: 100%;
+        transition: all 0.3s ease 0s;
+        @include fluid(max-width, 50px, 40px, 320px, 1170px);
+      }
+    }
+
     &-name {
       font-weight: 600;
       line-height: 133%;
       color: #fff;
+      transition: all 0.3s ease 0s;
+      cursor: pointer;
 
-      @include fluid(font-size, 18px, 14px, 320px, 1920px);
+      @include fluid(font-size, 18px, 14px, 320px, 1170px);
     }
 
     &-status {
@@ -82,20 +107,23 @@
       line-height: 150%;
       color: #fff;
 
-      @include fluid(font-size, 16px, 12px, 320px, 1920px);
+      @include fluid(font-size, 16px, 12px, 320px, 1170px);
     }
 
     &-place {
       font-weight: 600;
       line-height: 150%;
       color: #fff;
-      @include fluid(font-size, 16px, 12px, 320px, 1920px);
+      transition: all 0.3s ease 0s;
+      cursor: pointer;
+
+      @include fluid(font-size, 16px, 12px, 320px, 1170px);
     }
     &-date {
       font-weight: 600;
       line-height: 171%;
       color: #fff;
-      @include fluid(font-size, 14px, 10px, 320px, 1920px);
+      @include fluid(font-size, 14px, 10px, 320px, 1170px);
     }
   }
 
@@ -113,6 +141,14 @@
     line-height: 133%;
     color: #fff;
 
-    @include fluid(font-size, 18px, 14px, 320px, 1920px);
+    @include fluid(font-size, 18px, 14px, 320px, 1170px);
+
+    @media (any-hover: hover) {
+      cursor: pointer;
+      transition: all 0.3s ease 0s;
+      &:hover {
+        color: $colorPurple;
+      }
+    }
   }
 }

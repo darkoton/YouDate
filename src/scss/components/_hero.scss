@@ -143,19 +143,20 @@
     &-window {
       display: flex;
       flex-direction: column;
-      padding: 8px;
-      border-radius: 10px;
-      gap: 3px;
       background-color: $colorWhite;
       position: absolute;
       bottom: 14px;
       left: 50%;
       transform: translateX(-50%);
-      min-width: 154px;
       opacity: 0;
       pointer-events: none;
       transition: all 0.3s ease 0s;
       z-index: 10;
+
+      @include fluid(padding, 12px, 8px, 320px, 1170px);
+      @include fluid(border-radius, 15px, 10px, 320px, 1170px);
+      @include fluid(gap, 4.5px, 3px, 320px, 1170px);
+      @include fluid(min-width, 231px, 154px, 320px, 1170px);
 
       &.active {
         opacity: 1;
@@ -164,13 +165,13 @@
 
       & img {
         width: 100%;
-        max-width: 50px;
+        @include fluid(max-width, 75px, 50px, 320px, 1170px);
       }
 
       &-top {
         display: flex;
         align-items: center;
-        gap: 4px;
+        @include fluid(gap, 4px, 2px, 320px, 1170px);
       }
       &-info {
         display: flex;
@@ -178,24 +179,26 @@
       }
       &-name {
         font-weight: 600;
-        font-size: 12px;
         color: #4e5e72;
+        @include fluid(font-size, 18px, 12px, 320px, 1170px);
       }
       &-country {
         font-weight: 400;
-        font-size: 10px;
         color: #4e5e72;
         white-space: nowrap;
+        @include fluid(font-size, 15px, 10px, 320px, 1170px);
       }
       &-nav {
         display: flex;
         align-items: center;
-        gap: 10px;
-        margin-top: 4px;
 
+        @include fluid(gap, 15px, 10px, 320px, 1170px);
+        @include fluid(margin-top, 6px, 4px, 320px, 1170px);
         &-btn {
           background: transparent;
           color: #d9d9d9;
+
+          @include fluid(font-size, 21px, 14px, 320px, 1170px);
 
           @media (any-hover: hover) {
             cursor: pointer;
@@ -209,10 +212,11 @@
       &-button {
         font-family: var(--second-family);
         font-weight: 600;
-        font-size: 12px;
         color: #fff;
         padding: 0;
-        height: 19px;
+
+        @include fluid(font-size, 18px, 12px, 320px, 1170px);
+        @include fluid(height, 28.5px, 19px, 320px, 1170px);
       }
     }
   }

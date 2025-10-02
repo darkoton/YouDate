@@ -37,7 +37,7 @@
       @include fluid(padding-left, 10.5px, 7px, 320px, 1170px);
       @include fluid(padding-right, 10.5px, 7px, 320px, 1170px);
 
-      @media (max-width:440px) {
+      @media (max-width: 440px) {
         width: auto;
       }
     }
@@ -59,7 +59,7 @@
     @include fluid(padding-left, 12px, 6px, 320px, 1170px);
     @include fluid(padding-right, 12px, 6px, 320px, 1170px);
 
-    @media (max-width:375px) {
+    @media (max-width: 375px) {
       flex: 0 0 100%;
       max-width: 100%;
     }
@@ -93,19 +93,15 @@
       line-height: 100%;
       color: $colorDarkGray;
       position: relative;
-      transition: all 0.3s ease 0s;
 
       @include fluid(font-size, 24px, 18px, 320px, 1170px);
 
-      &::after {
-        content: '';
-        height: 1px;
-        width: 0;
-        background-color: $colorBlue;
-        position: absolute;
-        bottom: 2px;
-        left: 0;
-        transition: all 0.3s ease 0s;
+      @media (any-hover: hover) {
+        cursor: pointer;
+        &:hover {
+          color: $colorBlue;
+          text-decoration: underline;
+        }
       }
     }
 
@@ -139,14 +135,6 @@
       transition: all 0.3s ease 0s;
 
       &:hover {
-        & .cl-members__card-title {
-          color: $colorBlue;
-
-          &::after {
-            width: 100%;
-          }
-        }
-
         & img {
           transform: scale(1.2);
         }
