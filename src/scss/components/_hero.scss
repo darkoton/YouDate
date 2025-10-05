@@ -156,7 +156,7 @@
       @include fluid(padding, 12px, 8px, 320px, 1170px);
       @include fluid(border-radius, 15px, 10px, 320px, 1170px);
       @include fluid(gap, 4.5px, 3px, 320px, 1170px);
-      @include fluid(min-width, 231px, 154px, 320px, 1170px);
+      @include fluid(min-width, 252px, 168px, 320px, 1170px);
 
       &.active {
         opacity: 1;
@@ -166,6 +166,12 @@
       & img {
         width: 100%;
         @include fluid(max-width, 75px, 50px, 320px, 1170px);
+      }
+
+      &-slider {
+        display: flex;
+        align-items: center;
+        gap: 4px;
       }
 
       &-top {

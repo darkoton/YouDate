@@ -7,6 +7,12 @@
     @include fluid(padding-top, 98px, 40px, 320px, 1170px);
     @include fluid(padding-bottom, 115px, 40px, 320px, 1170px);
   }
+  &__col {
+    @media (max-width: 410px) {
+      flex: 0 0 100%;
+      max-width: 100%;
+    }
+  }
   &__logo {
     max-width: 163px;
 
