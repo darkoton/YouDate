@@ -439,19 +439,59 @@
 
     &-nav {
       position: absolute;
-      width: 50%;
-      height: 100%;
+      // width: 50%;
+      // height: 100%;
       z-index: 1;
+      color: #4c4c4c;
+      background: #ccc;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 25px;
+      top: 50%;
+      transform: translateY(-50%);
+
+      @include fluid(width, 40px, 30px, 320px, 1170px);
+      @include fluid(height, 40px, 30px, 320px, 1170px);
+      @include fluid(font-size, 20px, 15px, 320px, 1170px);
+
+      @media (any-hover: hover) {
+        cursor: pointer;
+        transition: all 0.3s ease 0s;
+        &:hover {
+          color: #000;
+          background: #fff;
+        }
+      }
+
+      &.swiper-button-disabled {
+        pointer-events: none;
+        cursor: not-allowed;
+        opacity: 0.5;
+      }
     }
 
     &-prev {
-      left: 0;
-      top: 0;
+      left: 0%;
+      transform: translate(-150%, -50%);
+
+      @media (max-width: 567px) {
+        left: 2%;
+        transform: translate(0%, -50%);
+      }
     }
 
     &-next {
-      right: 0;
-      top: 0;
+      right: 0%;
+      transform: translate(150%, -50%);
+
+      @media (max-width: 567px) {
+        right: 2%;
+        transform: translate(0%, -50%);
+      }
     }
 
     &-actions {

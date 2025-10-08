@@ -262,7 +262,7 @@
     min-height: 38px;
     line-height: 14px;
 
-    @include fluid(font-size, 14px, 12px, 320px, 1170px);
+    @include fluid(font-size, 18px, 16px, 320px, 1170px);
 
     &:focus {
       color: $colorGray;
