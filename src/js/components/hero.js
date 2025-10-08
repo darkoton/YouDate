@@ -46,15 +46,17 @@ dots.forEach(dot => {
 
     const win = parent.querySelector('.cl-hero__point-window');
 
-    const winCoords = win.getBoundingClientRect()
+    const winCoords = win.getBoundingClientRect();
     console.log(winCoords);
 
     if (winCoords.right > window.innerWidth) {
-      const deltaX = Math.abs(window.innerWidth - winCoords.right)
-      win.style.transform = `translateX(-${100 - deltaX / winCoords.width * 100}%)`
+      win.style.right = `-25px`;
+      win.style.left = 'auto';
+      win.style.transform = 'none';
     } else if (winCoords.left < 0) {
-      const deltaX = Math.abs(window.innerWidth - winCoords.right)
-      win.style.transform = `translateX(-${100 - deltaX / winCoords.width * 100}%)`
+      win.style.left = `-25px`;
+      win.style.right = 'auto';
+      win.style.transform = 'none';
     }
 
     win.classList.add('active');
