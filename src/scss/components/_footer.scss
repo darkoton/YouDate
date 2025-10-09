@@ -8,15 +8,17 @@
     @include fluid(padding-bottom, 115px, 40px, 320px, 1170px);
   }
   &__col {
-    @media (max-width: 410px) {
+    @media (max-width: 375px) {
       flex: 0 0 100%;
       max-width: 100%;
+      padding: 0 5px;
     }
   }
   &__logo {
+    width: 100%;
     max-width: 163px;
 
-    @include fluid(margin-bottom, 42px, 20px, 320px, 1170px);
+    @include fluid(margin-bottom, 42px, 6px, 320px, 1170px);
   }
   &__text {
     font-weight: 600;
@@ -26,7 +28,7 @@
     @include fluid(font-size, 16px, 12px, 320px, 1170px);
   }
   &__text:not(:last-child) {
-    margin-bottom: 12px;
+    @include fluid(margin-bottom, 12px, 6px, 320px, 1170px);
   }
   &__title {
     font-weight: 600;
