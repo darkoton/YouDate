@@ -144,9 +144,9 @@
       height: 66px;
       border-radius: 50%;
       position: absolute;
-      top: 60%;
+      top: 50%;
       left: 50%;
-      transform: translate(-50%, 0%);
+      transform: translate(-50%, -50%);
       background: rgba(217, 217, 217, 0.55);
       color: #909093;
       z-index: 1;
@@ -401,13 +401,15 @@
       }
 
       &-icon {
-        width: 38px;
-        height: 38px;
         border-radius: 50%;
         display: flex;
         justify-content: center;
         align-items: center;
         color: #fff;
+
+        @include fluid(width, 38px, 25px, 320px, 1170px);
+        @include fluid(height, 38px, 25px, 320px, 1170px);
+        @include fluid(font-size, 30px, 21px, 320px, 1170px);
       }
 
       &-verf {
